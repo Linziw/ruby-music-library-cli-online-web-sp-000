@@ -76,8 +76,8 @@ def play_song
  if input.to_i >= 1 && input.to_i <= Song.all.uniq.length
  chosen_song = Song.all.uniq.sort_by{|song| song.name}[input.to_i - 1]
 puts "Playing #{chosen_song.name} by #{chosen_song.artist.name}"
-else
-  
- end
+  else
+  end
+end
 
 end
