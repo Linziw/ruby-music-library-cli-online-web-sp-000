@@ -74,6 +74,7 @@ def play_song
  puts  "Which song number would you like to play?"
  list_songs
  input = gets.strip
+ songs = Song.all.uniq.sort_by{|song| song.name}
  
  
   
