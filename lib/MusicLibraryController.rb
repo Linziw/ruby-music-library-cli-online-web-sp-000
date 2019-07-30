@@ -71,7 +71,6 @@ def list_songs_by_genre
 end
 
 def play_song
-  list_songs
  puts  "Which song number would you like to play?"
  input = gets.strip
  chosen_song = Song.all.uniq.sort_by{|song| song.name}[input.to_i - 1]
