@@ -75,12 +75,7 @@ def play_song
  list_songs
  input = gets.strip
  chosen_song = Song.all.uniq.sort_by{|song| song.name}[input.to_i - 1]
-
- 
-  
-
-
- 
-end
+puts "Playing #{chosen_song.name} by #{chosen_song.artist.name}"
+ end
 
 end
