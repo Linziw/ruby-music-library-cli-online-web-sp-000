@@ -75,7 +75,7 @@ def play_song
  list_songs
  input = gets.strip
  chosen_song = Song.all.uniq.sort_by{|song| song.name}[input.to_i - 1]
-binding.pry
+
  
   
 
