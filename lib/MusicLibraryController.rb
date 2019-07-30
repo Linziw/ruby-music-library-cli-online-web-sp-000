@@ -33,13 +33,52 @@ class MusicLibraryController
 end
 
   def list_artists
-    sort_by_artist = Song.all.sort_by {|song| song.artist.name}
-    artists = sort_by_artist.collect {|song| song.artist.name}.uniq
+    sort_by_artist = Artist.all.sort_by {|artist| artist.name}
+    
+    artists = sort_by_artist.collect{|artist| artist.name}.uniq
+    
     artists.each_with_index do |artist, index| 
    puts "#{index+1}. #{artist}"
+   end
  end
+ 
+ def list_genres
+     sort_by_genre = Genre.all.sort_by {|genre| genre.name}
+    genres = sort_by_genre.collect{|genre| genre.name}.uniq
+    genres.each_with_index do |genre, index| 
+   puts "#{index+1}. #{genre}"
+   end
+ end
+ 
+def list_songs_by_artist
+  puts "Please enter the name of an artist:"
+  input = gets.strip 
+  artists_songs = Song.all.select {|song| song.artist.name == input}
+  sorted_artists_songs = artists_songs.sort_by{|song| song.name}.uniq
+  sorted_artists_songs.each_with_index do |song, index|
+    puts "#{index+1}. #{song.name} - #{song.genre.name}"
+    end
 end
+
+def list_songs_by_genre
+   puts "Please enter the name of a genre:"
+  input = gets.strip 
+  genre_songs = Song.all.select {|song| song.genre.name == input}
+  sorted_genre_songs = genre_songs.sort_by{|song| song.name}.uniq
+  sorted_genre_songs.each_with_index do |song, index|
+    puts "#{index+1}. #{song.artist.name} - #{song.name}"
+    end
+end
+
+def play_song
+ puts  "Which song number would you like to play?"
+ list_songs
+ input = gets.strip
+ 
   
 
-  
+
+ 
+end
+
 end
