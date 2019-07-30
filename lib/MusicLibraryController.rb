@@ -21,12 +21,10 @@ class MusicLibraryController
     puts "To quit, type 'exit'."
     puts "What would you like to do?"
     input = gets.chomp
-    if input == "list songs"
-      list_songs
-    elsif 
-      end
   end
   end
+  
+  
   
   
   def list_songs
