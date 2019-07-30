@@ -23,7 +23,7 @@ class MusicLibraryController
     input = gets.chomp
     if input == "list songs"
       list_songs
-    else 
+    elsif 
       end
   end
   end
